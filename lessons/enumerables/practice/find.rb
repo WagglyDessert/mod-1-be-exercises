@@ -15,9 +15,7 @@ end
 def no_waldo
     words = ["scarf", "sandcastle", "flag", "pretzel", "crow", "key"]
     found = words.find do |word|
-
-      # Your code goes here
-
+      word == ("waldo")
     end
 
     # expected return value is nil
@@ -25,16 +23,15 @@ end
 
 def find_waldo
     words = ["noise", "dog", "fair", "house", "waldo", "bucket", "fish"]
-
-    # Your code goes here
-
+        words.find { |word| word == "waldo"}
     # expected return value is "waldo"
 end
 
 def cannot_find_3_letter_words
     words = ["piglet", "porridge", "bear", "blueberry"]
-
-    # Your code goes here
+    words.find do |word|
+        word.length == 3
+    end
 
     # expected return value is nil
 end
@@ -87,10 +84,10 @@ def find_first_number_greater_than_20
     # expected return value is 21
 end
 
-# p find_first_seven_letter_word
-# p no_waldo
-# p find_waldo
-# p cannot_find_3_letter_words
+p find_first_seven_letter_word
+p no_waldo
+p find_waldo
+p cannot_find_3_letter_words
 # p find_13
 # p find_first_even_number
 # p find_first_multiple_of_3

@@ -4,33 +4,35 @@
 
 def capitalize
     names = ["alice", "bob", "charlie"]
-
-    # Your code goes here
+        names.map do |name|
+            name.capitalize
+        end
 
     # expected return value is ["Alice", "Bob", "Charlie"]
 end
 
 def doubles
     numbers = [1, 2, 3, 4, 5]
-
-    # Your code goes here
+    numbers.map do |number|
+        number * 2
+    end
 
     # expected return value is [2, 4, 6, 8, 10]
 end
 
 def squares
     numbers = [1, 2, 3, 4, 5]
-
-    # Your code goes here
+    numbers.map { |number| number * number}
+    #numbers.map { |number| number ** 2}
 
     # expected return value is [1, 4, 9, 16, 25]
 end
 
 def lengths
     names = ["alice", "bob", "charlie", "david", "eve"]
-
-    # Your code goes here
-
+    names.map do |name|
+        name.length
+    end
     # expected return value is [5, 3, 7, 5, 3]
 end
 
@@ -67,10 +69,10 @@ def trim_last_letter
 end
 
 
-# p capitalize
-# p doubles
-# p squares
-# p lengths
+p capitalize
+p doubles
+p squares
+p lengths
 # p normalize_zip_codes
 # p backwards
 # p words_with_no_vowels

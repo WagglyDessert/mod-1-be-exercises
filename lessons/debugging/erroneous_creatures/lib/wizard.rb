@@ -5,7 +5,7 @@ class Wizard
 
   def initialize(name, bearded = {bearded: true})
     @name = name
-    @bearded = bearded
+    @bearded = bearded[:bearded] #this style will call on bearded hash which defaults to true
   end
 
   def bearded?
