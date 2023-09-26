@@ -20,8 +20,10 @@ RSpec.describe Bob do
   describe 'Methods' do
     it 'can add paint' do
       bob = Bob.new
-      paint_1 = Paint.new("Alizarin Crimson")
-      paint_2 = Paint.new("Van Dyke Brown")
+      # paint_1 = Paint.new("Alizarin Crimson")
+      # paint_2 = Paint.new("Van Dyke Brown")
+      paint_1 = double("Alizarin Crimson")
+      paint_2 = double("Van Dyke Brown")
 
       bob.add_paint(paint_1)
       bob.add_paint(paint_2)
@@ -31,8 +33,13 @@ RSpec.describe Bob do
 
     it 'can return paint colors' do
       bob = Bob.new
-      paint_1 = Paint.new("Alizarin Crimson")
-      paint_2 = Paint.new("Van Dyke Brown")
+      # paint_1 = Paint.new("Alizarin Crimson")
+      # paint_2 = Paint.new("Van Dyke Brown")
+      paint_1 = double("Alizarin Crimson")
+      paint_2 = double("Van Dyke Brown")
+
+      allow(paint_1).to receive(:color).and_return("Alizarin Crimson")
+      allow(paint_2).to receive(:color).and_return("Van Dyke Brown")
       bob.add_paint(paint_1)
       bob.add_paint(paint_2)
 
@@ -41,8 +48,13 @@ RSpec.describe Bob do
 
     it 'can calculate total paint amount' do
       bob = Bob.new
-      paint_1 = Paint.new("Alizarin Crimson", 42)
-      paint_2 = Paint.new("Van Dyke Brown", 25)
+      # paint_1 = Paint.new("Alizarin Crimson", 42)
+      # paint_2 = Paint.new("Van Dyke Brown", 25)
+      paint_1 = double("Alizarin Crimson")
+      paint_2 = double("Van Dyke Brown")
+
+      allow(paint_1).to receive(:amount).and_return(42)
+      allow(paint_2).to receive(:amount).and_return(25)
 
       bob.add_paint(paint_1)
       bob.add_paint(paint_2)
